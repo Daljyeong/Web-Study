@@ -1,0 +1,287 @@
+/* Global Styles */
+button {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    outline: inherit;
+}
+
+/* Daangn Styles */
+/* [시작] 상단 이미지 캐러셀 & 헤더 */
+.post-header {
+    position: relative;
+}
+
+.post-header header {
+    width: 100%;
+    justify-content: space-between;
+
+    /* padding 때문에 요소가 튀어나가지 않도록 작성해줌 */
+    box-sizing: border-box;
+
+    /* 상위 요소를 기준으로 절대적인 값 설정 */
+    position: absolute;
+    display: flex;
+    padding: 14px 16px;
+}
+
+.post-header .post-header__icon-container {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+.post-header .post__image-container img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+/* [시작] 게시글 */
+.post {
+    padding: 0 16px;
+    padding-bottom: 54px;
+}
+
+/* '>'를 사용했기 때문에 post 바로 밑에 있는 section에만 적용됨 */
+.post>section {
+    padding: 16px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.post>section:last-child {
+    border-bottom: none;
+}
+
+/* [시작] 게시글>프로필 부분 */
+.post__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.post__header .header__user {
+    display: flex;
+    gap: 8px
+}
+
+.header__user .user__profile-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+}
+
+.header__user .user__info {
+    display: flex;
+    flex-direction: column;
+}
+
+.header__user .user__info .user__name {
+    color: #000;
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 18px;
+    margin-bottom: 4px;
+}
+
+.header__user .user__info .user__address {
+    color: #4F4F4F;
+    font-family: Inter;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px;
+}
+
+.post__header .header__temperature {
+    display: flex;
+    flex-direction: column;
+    /* 'justify-content: flex-end;'라고 입력했을 때는 적용 안 되던데 왜 이건 적용되는지?? */
+    align-items: flex-end;
+}
+
+.header__temperature .temperature__container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 4px;
+}
+
+.temperature__container .temperature__indicator {
+    color: #4AC1DB;
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 18px;
+    margin-right: 4px;
+}
+
+.temperature__indicator .temperature__bar {
+    width: 100%;
+    height: 2px;
+    background-color: #d9d9d9;
+    border-radius: 10px;
+
+    .temperature__bar--value {
+        width: 37.2%;
+        height: 2px;
+        background-color: #4AC1DB;
+    }
+}
+
+.header__temperature .temperature__desc {
+    color: #8C8C8C;
+    font-family: Inter;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 12px;
+    text-decoration-line: underline;
+}
+
+/* [시작] 게시글>내용 부분 */
+.post__content .post__title {
+    color: #000;
+    font-family: Inter;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 28px;
+}
+
+.desc__container {
+    display: flex;
+    gap: 2px;
+
+    color: #8C8C8C;
+    font-family: Inter;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px;
+
+    .desc--clickable {
+        text-decoration-line: underline;
+    }
+}
+
+.post__content .post__text {
+    margin: 16px 0;
+    color: #000;
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px;
+}
+
+/* [시작] 게시글>신고 부분 */
+.post .section__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+
+    .section__title {
+        color: #000;
+        font-family: Inter;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 20px;
+    }
+}
+
+/* [시작] 유저의 다른 판매 상품 */
+.post .products__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px 16px;
+    margin: 16px 0;
+}
+
+.product__container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.product__container .product__img {
+    width: 100%;
+    height: 118px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.product__container .product__name {
+    color: #000;
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px;
+}
+
+.product__price {
+    color: #000;
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 18px;
+}
+
+/* [시작] 하단바 */
+.bottom-bar {
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: white;
+    padding: 8px 16px 12px;
+    border-top: 1px solid #d9d9d9;
+    box-sizing: border-box;
+}
+
+.bottom-bar .bar__chat-btn {
+    border-radius: 4px;
+    background: #ff7e36;
+    padding: 8px 14px;
+
+    color: var(--white, #FFF);
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 18px;
+}
+
+.bar__info-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+
+    .divider {
+        width: 1px;
+        align-self: stretch;
+        background-color: #eee;
+    }
+
+    .bar__info {
+        display: flex;
+        flex-direction: column;
+
+        .product__desc {
+            color: #8C8C8C;
+            font-family: Inter;
+            font-size: 12px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 18px;
+        }
+    }
+}
